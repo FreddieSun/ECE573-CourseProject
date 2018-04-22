@@ -27,6 +27,7 @@ public class Planet {
         this.currentVelocity = new Point(initialVelocity.getxAxis(), initialVelocity.getyAxis());
     }
 
+    /** Calculates Force in x direction */
     private double getFx() {
         return (F * (sunPoint.getxAxis() - this.currentPoint.getxAxis())) / Point.getDistance(currentPoint, sunPoint);
     }

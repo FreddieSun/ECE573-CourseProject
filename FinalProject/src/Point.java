@@ -8,7 +8,6 @@ public class Point {
         this.yAxis = yAxis;
     }
 
-
     public double getxAxis() {
         return xAxis;
     }
@@ -25,16 +24,16 @@ public class Point {
         this.yAxis = yAxis;
     }
 
-    public double getDistance(Point P) {
-        double distanceSquare = Math.abs(Math.pow(this.xAxis - P.getyAxis(), 2)) +
-                Math.abs(Math.pow(this.yAxis - P.getyAxis(), 2));
-        return Math.sqrt(distanceSquare);
+    public double getDistance(final Point P) {
+        final double distance = Math.abs(Math.pow(this.xAxis - P.getxAxis(), 2) +
+                Math.pow(this.yAxis - P.getyAxis(), 2));
+        return Math.sqrt(distance);
     }
 
-    public static double getDistance(Point P, Point Q) {
-        double distanceSquare = Math.abs(Math.pow(Q.xAxis - P.getyAxis(), 2)) +
-                Math.abs(Math.pow(Q.yAxis - P.getyAxis(), 2));
-        return Math.sqrt(distanceSquare);
+    public static double getDistance(final Point P, final Point Q) {
+        final double distance = Math.abs(Math.pow(P.getxAxis() - Q.getxAxis(), 2) +
+                Math.pow(P.getyAxis() - Q.getyAxis(), 2));
+        return Math.sqrt(distance);
     }
 
     @Override
@@ -46,8 +45,4 @@ public class Point {
         return P.getxAxis() == this.getxAxis() && P.getyAxis() == this.getyAxis();
     }
 
-    @Override
-    public String toString() {
-        return "X: " + this.xAxis + "\tY: " + this.yAxis;
-    }
 }
