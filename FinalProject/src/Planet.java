@@ -3,11 +3,10 @@ public class Planet {
     public static final double changeT = 25000.0;
     public static final double T = 157788000.0;
 
-    private String planetName;
-    private Point initialVelocity;
-    private Point initialPoint;
-    private double mass;
-
+    private final String planetName;
+    private final Point initialVelocity;
+    private final Point initialPoint;
+    private final double mass;
 
     private Point currentPoint;
     private Point currentVelocity;
