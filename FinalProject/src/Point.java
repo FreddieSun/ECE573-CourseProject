@@ -31,7 +31,7 @@ public class Point {
         return Math.sqrt(distanceSquare);
     }
 
-    public double getDistance(Point P, Point Q) {
+    public static double getDistance(Point P, Point Q) {
         double distanceSquare = Math.abs(Math.pow(Q.xAxis - P.getyAxis(), 2)) +
                 Math.abs(Math.pow(Q.yAxis - P.getyAxis(), 2));
         return Math.sqrt(distanceSquare);

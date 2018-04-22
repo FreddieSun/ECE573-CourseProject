@@ -17,7 +17,7 @@ public class Planet {
     private double r;
     private double sunMass;
 
-    public Planet(final Point initialPoint, final Point initialVelocity, final double mass, final String planetName) {
+    public Planet(Point initialPoint, Point initialVelocity, double mass, String planetName) {
         this.initialVelocity = initialVelocity;
         this.initialPoint = initialPoint;
         this.mass = mass;
@@ -28,7 +28,62 @@ public class Planet {
         this.currentVelocity = new Point(initialVelocity.getxAxis(), initialVelocity.getyAxis());
     }
 
+    private double getFx() {
+        return (F * (sunPoint.getxAxis() - this.currentPoint.getxAxis())) / Point.getDistance(currentPoint, sunPoint);
+    }
 
+    /** Calculates Force in y direction */
+    private double getFy() {
+        return (F * (sunPoint.getyAxis() - this.currentPoint.getyAxis())) / Point.getDistance(currentPoint, sunPoint);
+    }
+
+    /** Calculates acceleration and returns it as a Point */
+    private Point getAcceleration() {
+        final double xAccel = getFx() / this.mass;
+        final double yAccel = getFy() / this.mass;
+        return new Point(xAccel, yAccel);
+    }
+
+    /** Calculates Velocity and updates global velocity variable */
+    private void calculateVelocity() {
+        final Point acceleration = getAcceleration();
+        this.currentVelocity.setxAxis(this.currentVelocity.getxAxis() + changeT * acceleration.getxAxis());
+        this.currentVelocity.setyAxis(this.currentVelocity.getyAxis() + changeT * acceleration.getyAxis());
+    }
+
+    /** Calculates new position based off of velocity */
+    private void calculatePoint() {
+        calculateVelocity();
+        this.currentPoint.setxAxis(this.currentPoint.getxAxis() + changeT * this.currentVelocity.getxAxis());
+        this.currentPoint.setyAxis(this.currentPoint.getyAxis() + changeT * this.currentVelocity.getyAxis());
+    }
+
+    /** Moves the planet by calculating its new position */
+    public void move() {
+        calculatePoint();
+    }
+
+    /** Sets the mass of the sun, used for calculating gravity and force */
+    public void setSunMass(double sunMass) {
+        this.sunMass = sunMass;
+    }
+
+    /** Sets the position of the sun, used for calculating gravity and force */
+    public void setSunPoint(final Point sun) {
+        this.sunPoint = sun;
+    }
+
+    /** Sets the F value which is affects planets orbit */
+    public void calculateF() {
+        //Distance formula from sun center to planet center
+        this.r = currentPoint.getDistance(this.sunPoint);
+        this.F = (G * this.sunMass * this.mass) / Math.pow(r, 2);
+    }
+
+
+    public double getF() {
+        return F;
+    }
 
     public String getPlanetName() {
         return planetName;
