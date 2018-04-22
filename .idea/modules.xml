@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FinalProject/BruteSearch.iml" filepath="$PROJECT_DIR$/FinalProject/BruteSearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/ECE573-CourseProject.iml" filepath="$PROJECT_DIR$/ECE573-CourseProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FinalProject/FinalProject.iml" filepath="$PROJECT_DIR$/FinalProject/FinalProject.iml" />
     </modules>
   </component>
 </project>
