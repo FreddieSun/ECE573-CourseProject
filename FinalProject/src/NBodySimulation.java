@@ -74,7 +74,6 @@ public class NBodySimulation {
         }
     }
 
-
     public static void main(String[] args) {
         NBodySimulation nBodySimulation = new NBodySimulation();
     }

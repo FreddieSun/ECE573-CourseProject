@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Barnes_Hut/Barnes_Hut.iml" filepath="$PROJECT_DIR$/Barnes_Hut/Barnes_Hut.iml" />
       <module fileurl="file://$PROJECT_DIR$/FinalProject/BruteSearch.iml" filepath="$PROJECT_DIR$/FinalProject/BruteSearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/ECE573-CourseProject.iml" filepath="$PROJECT_DIR$/ECE573-CourseProject.iml" />
     </modules>
