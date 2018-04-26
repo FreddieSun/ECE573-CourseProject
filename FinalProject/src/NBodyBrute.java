@@ -1,6 +1,6 @@
 import java.io.File;
 
-public class NBodySimulation {
+public class NBodyBrute {
 
     //Time variables
     public static final double changeT = 25000.0;
@@ -11,8 +11,8 @@ public class NBodySimulation {
     private final Planet[] planets;
 
 
-    public NBodySimulation() {
-//Reads info from file
+    public NBodyBrute() {
+        //Reads info from file
         final In fileIn = new In(new File("planets.txt"));
 
         this.numPlanets = fileIn.readInt();
@@ -75,7 +75,7 @@ public class NBodySimulation {
     }
 
     public static void main(String[] args) {
-        NBodySimulation nBodySimulation = new NBodySimulation();
+        NBodyBrute nBodySimulation = new NBodyBrute();
     }
 
 
