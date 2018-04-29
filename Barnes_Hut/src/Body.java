@@ -64,4 +64,16 @@ public class Body {
         return String.format("%10.3E %10.3E %10.3E %10.3E %10.3E", rx, ry, vx, vy, mass);
     }
 
+    public boolean in(Quad q) {
+        return q.contains(this.rx, this.ry);
+    }
+
+    public Body plus(Body b) {
+        Body a = this;
+        double m = a.mass + b.mass;
+        double x = (a.rx * a.mass + b.rx * b.mass) / m;
+        double y = (a.ry * a.mass + b.ry * b.mass) / m;
+
+        return new Body(x, y, a.vx, b.vx, m, a.color);
+    }
 }
