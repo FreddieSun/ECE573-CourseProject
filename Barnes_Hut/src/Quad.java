@@ -14,6 +14,7 @@ public class Quad {
         return length;
     }
 
+
     public boolean contains(double x, double y) {
         double halfLen = this.length / 2.0;
         return (x <= this.xmid + halfLen &&
