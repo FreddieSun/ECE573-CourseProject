@@ -6,7 +6,7 @@ public class BHTree {
     private BHTree SW;
     private BHTree SE;
 
-    private final double Theta = 0.5;
+    private final double Theta = 0.1;
 
 
     public BHTree(Quad q) {
@@ -27,7 +27,6 @@ public class BHTree {
     }
 
     public void insert(Body b) {
-        // if node does not contain a body, put the new body b here
         if (body == null) {
             body = b;
             return;
@@ -70,11 +69,7 @@ public class BHTree {
 
     }
 
-    /**
-     * Approximates the net force acting on body b from all the bodies
-     * in the invoking Barnes-Hut tree, and update b's force accordingly
-     * @param b
-     */
+
     public void updateForce(Body b) {
 
         if (body == null || b.equals(body))
@@ -108,11 +103,6 @@ public class BHTree {
     }
 
 
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 
     public void draw() {
 

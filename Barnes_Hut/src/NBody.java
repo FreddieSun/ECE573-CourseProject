@@ -3,27 +3,26 @@
 import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class NBody {
+    final static double deltaT = 0.1;                     // time quantum
 
     public static void main(String[] args) throws FileNotFoundException {
-
 
         // for reading from stdin
         Scanner console = new Scanner(System.in);
 
         String filename = console.next();
+
         File file = new File(filename);
     
         Scanner sc = new Scanner(file);
 
-
-
-        final double dt = 0.1;                     // time quantum
-        int N = sc.nextInt();                 // number of particles
-        double radius = sc.nextDouble();      // radius of universe
+        // number of particles
+        int N = sc.nextInt();
+        // radius of universe
+        double radius = sc.nextDouble();
 
         // turn on animation mode and rescale coordinate system
         StdDraw.show(0);
@@ -33,8 +32,8 @@ public class NBody {
         // read in and initialize bodies
         Body[] bodies = new Body[N];               // array of N bodies
         for (int i = 0; i < N; i++) {
-            double px   = sc.nextDouble();
-            double py   = sc.nextDouble();
+            double rx   = sc.nextDouble();
+            double ry   = sc.nextDouble();
             double vx   = sc.nextDouble();
             double vy   = sc.nextDouble();
             double mass = sc.nextDouble();
@@ -43,13 +42,11 @@ public class NBody {
             int blue    = sc.nextInt();
 
             Color color = new Color(red, green, blue);
-            bodies[i]   = new Body(px, py, vx, vy, mass, color);
+            bodies[i]   = new Body(rx, ry, vx, vy, mass, color);
         }
 
 
-        // simulate the universe
-        for (double t = 0.0; true; t = t + dt) {
-
+        for (double t = 0.0; true; t = t + deltaT) {
             Quad quad = new Quad(0, 0, radius * 2);
             BHTree tree = new BHTree(quad);
 
@@ -62,7 +59,7 @@ public class NBody {
             for (int i = 0; i < N; i++) {
                 bodies[i].resetForce();
                 tree.updateForce(bodies[i]);
-                bodies[i].update(dt);
+                bodies[i].update(deltaT);
             }
 
             // draw the bodies
@@ -71,6 +68,7 @@ public class NBody {
                 bodies[i].draw();
 
             StdDraw.show(10);
+            t += deltaT;
         }
     }
 }

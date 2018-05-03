@@ -18,7 +18,7 @@ public class Body {
     }
 
     // update the velocity and position of the invoking Body
-    // uses leapfrom method, as in Assignment 2
+    // uses leapfrog method, as in Assignment 2
     public void update(double dt) {
         vx += dt * fx / mass;
         vy += dt * fy / mass;

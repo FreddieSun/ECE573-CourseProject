@@ -1,11 +1,23 @@
 import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-public class NBodyBrute {
+public class NBodyBrute1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        // for reading from sc
+        Scanner console = new Scanner(System.in);
+
+        String filename = console.next();
+
+        File file = new File(filename);
+
+        Scanner sc = new Scanner(file);
+        
         final double dt = 0.1;                     // time quantum
-        int N = StdIn.readInt();                   // number of particles
-        double radius = StdIn.readDouble();        // radius of universe
+        int N = sc.nextInt();                   // number of particles
+        double radius = sc.nextDouble();        // radius of universe
 
         // turn on animation mode and rescale coordinate system
         StdDraw.show(0);
@@ -15,14 +27,14 @@ public class NBodyBrute {
         // read in and initialize bodies
         Body[] bodies = new Body[N];               // array of N bodies
         for (int i = 0; i < N; i++) {
-            double px   = StdIn.readDouble();
-            double py   = StdIn.readDouble();
-            double vx   = StdIn.readDouble();
-            double vy   = StdIn.readDouble();
-            double mass = StdIn.readDouble();
-            int red     = StdIn.readInt();
-            int green   = StdIn.readInt();
-            int blue    = StdIn.readInt();
+            double px   = sc.nextDouble();
+            double py   = sc.nextDouble();
+            double vx   = sc.nextDouble();
+            double vy   = sc.nextDouble();
+            double mass = sc.nextDouble();
+            int red     = sc.nextInt();
+            int green   = sc.nextInt();
+            int blue    = sc.nextInt();
             Color color = new Color(red, green, blue);
             bodies[i]   = new Body(px, py, vx, vy, mass, color);
         }
