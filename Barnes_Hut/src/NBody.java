@@ -58,12 +58,15 @@ public class NBody {
             // update the forces, positions, velocities, and accelerations
             for (int i = 0; i < N; i++) {
                 bodies[i].resetForce();
-                tree.updateForce(bodies[i]);
-                bodies[i].update(deltaT);
+                if (bodies[i].in(quad)) {
+                    tree.updateForce(bodies[i]);
+                    bodies[i].update(deltaT);
+                }
             }
 
             // draw the bodies
             StdDraw.clear(StdDraw.BLACK);
+
             for (int i = 0; i < N; i++)
                 bodies[i].draw();
 
