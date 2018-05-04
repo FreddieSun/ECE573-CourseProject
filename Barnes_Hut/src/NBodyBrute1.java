@@ -64,11 +64,11 @@ public class NBodyBrute1 {
                 bodies[i].draw();
             }
             StdDraw.show(10);
-//            if (count == 200)
-//                break;
+            if (count == 200)
+                break;
         }
-//        double end = System.currentTimeMillis();
+        double end = System.currentTimeMillis();
 
-//        System.out.println("200次模拟，用了这么多秒： " + String.valueOf(end - start));
+        System.out.println("200次循环，用了这么多秒： " + String.valueOf(end - start));
     }
 }
