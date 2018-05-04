@@ -7,10 +7,20 @@ import java.util.Scanner;
 
 public class NBody {
     final static double deltaT = 0.1;                     // time quantum
-    private final static int step = 5000;
-    private final static boolean isDemo = false;
+    // private final static int step = 5000;
+    // private final static boolean isDemo = false;
 
     public static void main(String[] args) throws FileNotFoundException {
+
+      if(args.length<2){
+        System.out.println("Err: missing parameters");
+        return;
+      }
+       int step = Integer.parseInt(args[0]);
+       boolean isDemo = false;
+       if(args[1] == "true"){
+         isDemo = true;
+       }
 
       String dataFolder = "dataset";
 
@@ -35,7 +45,7 @@ public class NBody {
         };
 
         for(String fn : filename){
-          File file = new File(dateset+"/"+fn);
+          File file = new File(dataFolder+"/"+fn);
 
           Scanner sc = new Scanner(file);
 
@@ -105,7 +115,7 @@ public class NBody {
           }
 
           double end = System.currentTimeMillis();
-          System.out.println(fn + " cost " + String.valueOf(end - start) + " ms");
+          System.out.println(fn + ", " + String.valueOf(end - start));
         }
 
 
