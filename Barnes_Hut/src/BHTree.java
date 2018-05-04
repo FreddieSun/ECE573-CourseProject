@@ -6,7 +6,7 @@ public class BHTree {
     private BHTree SW;
     private BHTree SE;
 
-    private final double Theta = 0.1;
+    private final double Theta = 0.5;
 
 
     public BHTree(Quad q) {

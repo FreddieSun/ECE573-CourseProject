@@ -40,9 +40,11 @@ public class NBodyBrute1 {
         }
 
 
+        double start = System.currentTimeMillis();
+        int count = 0;
         // simulate the universe
         for (double t = 0.0; true; t = t + dt) {
-
+            count++;
             // update the forces
             for (int i = 0; i < N; i++) {
                 bodies[i].resetForce();
@@ -62,7 +64,11 @@ public class NBodyBrute1 {
                 bodies[i].draw();
             }
             StdDraw.show(10);
-
+//            if (count == 200)
+//                break;
         }
+//        double end = System.currentTimeMillis();
+
+//        System.out.println("200次模拟，用了这么多秒： " + String.valueOf(end - start));
     }
 }

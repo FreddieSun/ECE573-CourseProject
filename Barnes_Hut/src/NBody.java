@@ -45,8 +45,10 @@ public class NBody {
             bodies[i]   = new Body(rx, ry, vx, vy, mass, color);
         }
 
-
+        double start = System.currentTimeMillis();
+        int count = 0;
         for (double t = 0.0; true; t = t + deltaT) {
+            count++;
             Quad quad = new Quad(0, 0, radius * 2);
             BHTree tree = new BHTree(quad);
 
@@ -58,6 +60,7 @@ public class NBody {
             // update the forces, positions, velocities, and accelerations
             for (int i = 0; i < N; i++) {
                 bodies[i].resetForce();
+                // if is still in the universe
                 if (bodies[i].in(quad)) {
                     tree.updateForce(bodies[i]);
                     bodies[i].update(deltaT);
@@ -72,6 +75,12 @@ public class NBody {
 
             StdDraw.show(10);
             t += deltaT;
+//            if ( count == 200)
+//                break;
         }
+
+//        double end = System.currentTimeMillis();
+//        System.out.println("200次模拟，用了这么多秒： " + String.valueOf(end - start));
+
     }
 }
