@@ -29,10 +29,10 @@ public class NBody {
               "galaxy20k.txt",
               "galaxy30k.txt",
               "saturnrings.txt",
-              "cluster2.5k.txt",
+              "cluster2582.txt",
               "collision1.txt",
               "collision2.txt",
-              "galaxyform2.5k.txt",
+              "galaxyform2500.txt",
               "galaxymerge1.txt",
               "galaxymerge2.txt",
               "galaxymerge3.txt",
@@ -115,7 +115,7 @@ public class NBody {
           }
 
           double end = System.currentTimeMillis();
-          System.out.println(fn + ", " + String.valueOf(end - start));
+          System.out.println(fn + ", " + N + ", " + String.valueOf(end - start));
         }
 
 
