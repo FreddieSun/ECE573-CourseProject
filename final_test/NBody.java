@@ -18,7 +18,7 @@ public class NBody {
       }
        int step = Integer.parseInt(args[0]);
        boolean isDemo = false;
-       if(args[1] == "true"){
+       if(args[1].equals("true")){
          isDemo = true;
        }
 

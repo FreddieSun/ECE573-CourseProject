@@ -13,9 +13,10 @@ public class NBodyBrute1 {
          System.out.println("Err: missing parameters");
          return;
        }
+       
         int step = Integer.parseInt(args[0]);
         boolean isDemo = false;
-        if(args[1] == "true"){
+        if(args[1].equals("true")){
           isDemo = true;
         }
 

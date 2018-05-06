@@ -1,0 +1,17 @@
+galaxy10k.txt, 10001, 100465.0
+galaxy20k.txt, 20001, 224851.0
+galaxy30k.txt, 30002, 285253.0
+saturnrings.txt, 11987, 125631.0
+cluster2582.txt, 2582, 4771.0
+collision1.txt, 2000, 3214.0
+collision2.txt, 2002, 14460.0
+galaxyform2500.txt, 2500, 15787.0
+galaxymerge1.txt, 2000, 10530.0
+galaxymerge2.txt, 4000, 25163.0
+galaxymerge3.txt, 2901, 21989.0
+galaxy1.txt, 802, 4532.0
+galaxy2.txt, 652, 3066.0
+galaxy3.txt, 2001, 13017.0
+galaxy4.txt, 502, 2138.0
+spiralgalaxy.txt, 843, 5030.0
+asteroids1000.txt, 1000, 5622.0
