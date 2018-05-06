@@ -100,7 +100,7 @@ public class NBodyBruteDemo {
             for (int i = 0; i < N; i++) {
                 bodies[i].draw();
             }
-            StdDraw.show(10);
+            StdDraw.show(1);
 
             if (count == step)
                 break;
