@@ -8,19 +8,16 @@ import java.util.Scanner;
 public class NBody {
     final static double deltaT = 0.1;                     // time quantum
     // private final static int step = 5000;
-    // private final static boolean isDemo = false;
+    private final static boolean isDemo = false;
 
     public static void main(String[] args) throws FileNotFoundException {
 
-      if(args.length<2){
+      if(args.length<1){
         System.out.println("Err: missing parameters");
         return;
       }
        int step = Integer.parseInt(args[0]);
-       boolean isDemo = false;
-       if(args[1].equals("true")){
-         isDemo = true;
-       }
+       // boolean isDemo = false;
 
       String dataFolder = "dataset";
 

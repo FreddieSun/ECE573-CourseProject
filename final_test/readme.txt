@@ -1,7 +1,12 @@
 Quick Start:
 ====
-java NBody 5000 false >> result1.txt
-java NBodyBrute1 5000 false >> result2.txt
+javac *.java
+
+java NBody 5000 >> result1.txt
+java NBodyDemo 1000 collision1.txt
+
+java NBodyBrute 5000 >> result2.txt
+java NBodyBruteDemo 1000 collision1.txt
 ====
 
 
@@ -14,25 +19,27 @@ and ignore all the warnings.
 
 To run the brute force algorithm,
 ====
-java NBodyBrute1 <step> <isDemo>
+java NBodyBrute <step>
+java NBodyBruteDemo <step> <dataset>
 ====
 
 To run the Barnes Hut algorithm,
 ====
-java NBody <step> <isDemo>
+java NBody <step>
+java NBodyDemo <step> <dataset>
 ====
 
 Parameters:
-step: an int that determines the program will run how many steps.
-isDemo: a boolean, if true, the algorithm will show you the animation, or it won't.
+step: required, an int that determines the program will run how many steps. No animation.
+dateset: required, name of file under the /dataset. Enter the filename directly. With animation.
 
 Example:
 ====
-java NBody 1000 true
+java NBody 1000 >> result1.txt
 ====
-The program will run the algorithm 1000 steps with animation.
+The program will run the algorithm 1000 steps without animation, and the output will be stored in result1.txt
 
 ====
-java NBody 1000 false >> result1.txt
+java NBodyDemo 1000 collision1.txt
 ====
-The program will run 1000 steps without animation, and the output will be stored in result1.txt.
+The program will run 1000 steps with animation, using the dataset from collision1.txt
